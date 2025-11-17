@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Training TR-103 Daily Report</title>
+
+    <style>
+        /* Global Styles */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('bg.webp') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            overflow-y: scroll;
+            background-attachment: fixed;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Header Styles */
+        header {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(to right, #333, #555);
+            padding: 10px 20px;
+            color: #fff;
+            border-radius: 10px 10px 0 0;
+        }
+
+        header img {
+            height: 80px;
+            margin: 5px 0;
+            max-width: 100%;
+        }
+
+        header .home-button {
+            background-color: #e91e63;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 16px;
+            margin: 5px 0;
+        }
+
+        header .home-button:hover {
+            background-color: #d81b60;
+        }
+
+        header .home-button:active {
+            background-color: #c2185b;
+        }
+
+        /* Report Header Styles */
+        .report-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .report-header h1 {
+            font-size: 2.5em;
+            color: #100d01;
+            margin-bottom: 10px;
+        }
+
+        .report-header h2 {
+            font-size: 1.5em;
+            color: #100d00;
+            margin-bottom: 10px;
+        }
+
+        .report-header p {
+            color: #fa0b33;
+            font-size: 18px;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        /* Navigation Styles */
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        nav a {
+            display: inline-block;
+            padding: 10px 14px;
+            background-color: #e91e63;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            background-color: #d81b60;
+            transition: all;
+        }
+
+        nav a:hover:active {
+            background-color: #c2185b;
+        }
+
+        /* Section Styles */
+        .section {
+            display: none;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        h1,
+        h2,
+        p {
+            text-align: center;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 2em;
+        }
+
+        /* PDF Container Styles */
+        .pdf-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .pdf-container iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+        }
+
+        /* Footer Styles */
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            background: linear-gradient(to right, #555, #333);
+            color: #fff;
+            border-radius: 0 0 10px 10px;
+        }
+
+        footer a {
+            color: #f1c40f;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            header .home-button {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+
+            header img {
+                height: 60px;
+            }
+
+            .pdf-container iframe {
+                height: 400px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <a href="https://www.gndec.ac.in/"><img src="logo.jpeg" alt="GNDEC Logo"></a>
+        </header>
+
+        <div class="report-header">
+            <h1>Training TR-103 Daily Report</h1>
+            <p>Submitted by:<br>Anmoldeep Singh<br>URN 2203402 D4CSEA1<br>Guru Nanak Dev Engineering College, Gill Park, Ludhiana</p>
+            <h2>6 Weeks Summer Training<br>on<br>Android App Development</h2>
+        </div>
+
+        <nav>
+            <!-- Navigation links for each day -->
+            <a href="#" onclick="showSection('day1')">Day 1</a>
+            <a href="#" onclick="showSection('day2')">Day 2</a>
+            <a href="#" onclick="showSection('day3')">Day 3</a>
+            <a href="#" onclick="showSection('day4')">Day 4</a>
+            <a href="#" onclick="showSection('day5')">Day 5</a>
+            <a href="#" onclick="showSection('day6')">Day 6</a>
+            <a href="#" onclick="showSection('day7')">Day 7</a>
+            <a href="#" onclick="showSection('day8')">Day 8</a>
+            <a href="#" onclick="showSection('day9')">Day 9</a>
+            <a href="#" onclick="showSection('day10')">Day 10</a>
+            <a href="#" onclick="showSection('day11')">Day 11</a>
+            <a href="#" onclick="showSection('day12')">Day 12</a>
+            <a href="#" onclick="showSection('day13')">Day 13</a>
+            <a href="#" onclick="showSection('day14')">Day 14</a>
+            <a href="#" onclick="showSection('day15')">Day 15</a>
+            <a href="#" onclick="showSection('day16')">Day 16</a>
+            <a href="#" onclick="showSection('day17')">Day 17</a>
+            <a href="#" onclick="showSection('day18')">Day 18</a>
+            <a href="#" onclick="showSection('day19')">Day 19</a>
+            <a href="#" onclick="showSection('day20')">Day 20</a>
+            <a href="#" onclick="showSection('day21')">Day 21</a>
+            <a href="#" onclick="showSection('day22')">Day 22</a>
+            <a href="#" onclick="showSection('day23')">Day 23</a>
+            <a href="#" onclick="showSection('day24')">Day 24</a>
+            <a href="#" onclick="showSection('day25')">Day 25</a>
+            <a href="#" onclick="showSection('day26')">Day 26</a>
+            <a href="#" onclick="showSection('day27')">Day 27</a>
+            <a href="#" onclick="showSection('day28')">Day 28</a>
+            <a href="#" onclick="showSection('day29')">Day 29</a>
+            <a href="#" onclick="showSection('day30')">Day 30</a>
+            <a href="#" onclick="showSection('day31')">Day 31</a>
+            <a href="#" onclick="showSection('day32')">Day 32</a>
+            <a href="#" onclick="showSection('day33')">Day 33</a>
+            <a href="#" onclick="showSection('day34')">Day 34</a>
+            <a href="#" onclick="showSection('day35')">Day 35</a>
+            <a href="#" onclick="showSection('day36')">Day 36</a>
+            <a href="#" onclick="showSection('day37')">Day 37</a>
+            <a href="#" onclick="showSection('day38')">Day 38</a>
+            <a href="#" onclick="showSection('day39')">Day 39</a>
+            <a href="#" onclick="showSection('day40')">Day 40</a>
+            <a href="#" onclick="showSection('day41')">Day 41</a>
+            <a href="#" onclick="showSection('day42')">Day 42</a>
+        </nav>
+
+        <!-- Sections for each day (chronological file names) -->
+        <section id="home" class="section active">
+            <!-- Home/Intro - uses the report header above -->
+        </section>
+
+        <section id="day1" class="section">
+            <h1>Training Report Day 1</h1>
+            <div class="pdf-container"><iframe src="27th June 2025.pdf"></iframe></div>
+        </section>
+
+        <section id="day2" class="section">
+            <h1>Training Report Day 2</h1>
+            <div class="pdf-container"><iframe src="28th June 2025.pdf"></iframe></div>
+        </section>
+
+        <section id="day3" class="section">
+            <h1>Training Report Day 3</h1>
+            <div class="pdf-container"><iframe src="30th June 2025.pdf"></iframe></div>
+        </section>
+
+        <section id="day4" class="section">
+            <h1>Training Report Day 4</h1>
+            <div class="pdf-container"><iframe src="1st July 2025.pdf"></iframe></div>
+        </section>
+
+        <section id="day5" class="section">
+            <h1>Training Report Day 5</h1>
+            <div class="pdf-container"><iframe src="2nd July 2025.pdf"></iframe></div>
+        </section>
+
+        <section id="day6" class="section">
+            <h1>Training Report Day 6</h1>
+            <div class="pdf-container"><iframe src="3rd July 2025.pdf"></iframe></div>
+        </section>
+
+        <section id="day7" class="section">
+            <h1>Training Report Day 7</h1>
+            <div class="pdf-container"><iframe src="4th July 2025.pdf"></iframe></div>
+        </section>
+
+        <section id="day8" class="section">
+            <h1>Training Report Day 8</h1>
+            <div class="pdf-container"><iframe src="5th July 2025.pdf"></iframe></div>
+        </section>
+
+        <section id="day9" class="section">
+            <h1>Training Report Day 9</h1>
+            <div class="pdf-container"><iframe src="6th July 2025.pdf"></iframe></div>
+        </section>
+
+        <section id="day10" class="section">
+            <h1>Training Report Day 10</h1>
+            <div class="pdf-container"><iframe src="7th July 2025.pdf"></iframe></div>
+        </section>
+
+        <section id="day11" class="section">
+            <h1>Training Report Day 11</h1>
+            <div class="pdf-container"><iframe src="8th July 2025.pdf"></iframe></div>
+        </section>
+
+        <section id="day12" class="section">
+            <h1>Training Report Day 12</h1>
+            <div class="pdf-container"><iframe src="9th July 2025.pdf"></iframe></div>
+        </section>
+
+        <section id="day13" class="section">
+            <h1>Training Report Day 13</h1>
+            <div class="pdf-container"><iframe src="10th July 2025.pdf"></iframe></div>
+        </section>
+
+        <section id="day14" class="section">
+            <h1>Training Report Day 14</h1>
+            <div class="pdf-container"><iframe src="11th July 2025.pdf"></iframe></div>
+        </section>
+
+        <section id="day15" class="section">
+            <h1>Training Report Day 15</h1>
+            <div class="pdf-container"><iframe src="12th July 2025.pdf"></iframe></div>
+        </section>
+
+        <section id="day16" class="section">
+            <h1>Training Report Day 16</h1>
+            <div class="pdf-container"><iframe src="14th July 2025.pdf"></iframe></div>
+        </section>
+
+        <section id="day17" class="section">
+            <h1>Training Report Day 17</h1>
+            <div class="pdf-container"><iframe src="15th July 2025.pdf"></iframe></div>
+        </section>
+
+        <section id="day18" class="section">
+            <h1>Training Report Day 18</h1>
+            <div class="pdf-container"><iframe src="16th July 2025.pdf"></iframe></div>
+        </section>
+
+        <section id="day19" class="section">
+            <h1>Training Report Day 19</h1>
+            <div class="pdf-container"><iframe src="17th July 2025.pdf"></iframe></div>
+        </section>
+
+        <section id="day20" class="section">
+            <h1>Training Report Day 20</h1>
+            <div class="pdf-container"><iframe src="18th July 2025.pdf"></iframe></div>
+        </section>
+
+        <section id="day21" class="section">
+            <h1>Training Report Day 21</h1>
+            <div class="pdf-container"><iframe src="19th July 2025.pdf"></iframe></div>
+        </section>
+
+        <section id="day22" class="section">
+            <h1>Training Report Day 22</h1>
+            <div class="pdf-container"><iframe src="21st July 2025.pdf"></iframe></div>
+        </section>
+
+        <section id="day23" class="section">
+            <h1>Training Report Day 23</h1>
+            <div class="pdf-container"><iframe src="22nd July 2025.pdf"></iframe></div>
+        </section>
+
+        <section id="day24" class="section">
+            <h1>Training Report Day 24</h1>
+            <div class="pdf-container"><iframe src="23rd July 2025.pdf"></iframe></div>
+        </section>
+
+        <section id="day25" class="section">
+            <h1>Training Report Day 25</h1>
+            <div class="pdf-container"><iframe src="24th July 2025.pdf"></iframe></div>
+        </section>
+
+        <section id="day26" class="section">
+            <h1>Training Report Day 26</h1>
+            <div class="pdf-container"><iframe src="25th July 2025.pdf"></iframe></div>
+        </section>
+
+        <section id="day27" class="section">
+            <h1>Training Report Day 27</h1>
+            <div class="pdf-container"><iframe src="26th July 2025.pdf"></iframe></div>
+        </section>
+
+        <section id="day28" class="section">
+            <h1>Training Report Day 28</h1>
+            <div class="pdf-container"><iframe src="28th July 2025.pdf"></iframe></div>
+        </section>
+
+        <section id="day29" class="section">
+            <h1>Training Report Day 29</h1>
+            <div class="pdf-container"><iframe src="29th July 2025.pdf"></iframe></div>
+        </section>
+
+        <section id="day30" class="section">
+            <h1>Training Report Day 30</h1>
+            <div class="pdf-container"><iframe src="31st July 2025.pdf"></iframe></div>
+        </section>
+
+        <section id="day31" class="section">
+            <h1>Training Report Day 31</h1>
+            <div class="pdf-container"><iframe src="1st August 2025.pdf"></iframe></div>
+        </section>
+
+        <section id="day32" class="section">
+            <h1>Training Report Day 32</h1>
+            <div class="pdf-container"><iframe src="2nd August 2025.pdf"></iframe></div>
+        </section>
+
+        <section id="day33" class="section">
+            <h1>Training Report Day 33</h1>
+            <div class="pdf-container"><iframe src="3rd August 2025.pdf"></iframe></div>
+        </section>
+
+        <section id="day34" class="section">
+            <h1>Training Report Day 34</h1>
+            <div class="pdf-container"><iframe src="4th August 2025.pdf"></iframe></div>
+        </section>
+
+        <section id="day35" class="section">
+            <h1>Training Report Day 35</h1>
+            <div class="pdf-container"><iframe src="5th August 2025.pdf"></iframe></div>
+        </section>
+
+        <section id="day36" class="section">
+            <h1>Training Report Day 36</h1>
+            <div class="pdf-container"><iframe src="6th August 2025.pdf"></iframe></div>
+        </section>
+
+        <section id="day37" class="section">
+            <h1>Training Report Day 37</h1>
+            <div class="pdf-container"><iframe src="7th August 2025.pdf"></iframe></div>
+        </section>
+
+        <section id="day38" class="section">
+            <h1>Training Report Day 38</h1>
+            <div class="pdf-container"><iframe src="8th August 2025.pdf"></iframe></div>
+        </section>
+
+        <section id="day39" class="section">
+            <h1>Training Report Day 39</h1>
+            <div class="pdf-container"><iframe src="9th August 2025.pdf"></iframe></div>
+        </section>
+
+        <section id="day40" class="section">
+            <h1>Training Report Day 40</h1>
+            <div class="pdf-container"><iframe src="10th August 2025.pdf"></iframe></div>
+        </section>
+
+        <section id="day41" class="section">
+            <h1>Training Report Day 41</h1>
+            <div class="pdf-container"><iframe src="11th August 2025.pdf"></iframe></div>
+        </section>
+
+        <section id="day42" class="section">
+            <h1>Training Report Day 42</h1>
+            <div class="pdf-container"><iframe src="12th August 2025.pdf"></iframe></div>
+        </section>
+
+        <footer>
+            <p>Anmoldeep Singh | © 2025 | <a href="https://www.linkedin.com/in/aniket-singh-1a0472313?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app">LinkedIn</a></p>
+        </footer>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => section.classList.remove('active'));
+            const el = document.getElementById(sectionId);
+            if (el) el.classList.add('active');
+        }
+        // Optionally show first real day by default:
+        // showSection('day1');
+    </script>
+</body>
+</html>
